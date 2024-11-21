@@ -1,0 +1,53 @@
+@page
+@model NETProject.Pages.Customers.Create
+
+@{
+    ViewData["Title"] = "Create New Customer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label for="Firstname">First Name</label>
+        <input type="text" class="form-control" id="Firstname" name="Firstname" asp-for="Customer.Firstname" required />
+        <span asp-validation-for="Customer.Firstname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Lastname">Last Name</label>
+        <input type="text" class="form-control" id="Lastname" name="Lastname" asp-for="Customer.Lastname" required />
+        <span asp-validation-for="Customer.Lastname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" asp-for="Customer.Email" required />
+        <span asp-validation-for="Customer.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input type="text" class="form-control" id="Phone" name="Phone" asp-for="Customer.Phone" required />
+        <span asp-validation-for="Customer.Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <input type="text" class="form-control" id="Address" name="Address" asp-for="Customer.Address" required />
+        <span asp-validation-for="Customer.Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Company">Company</label>
+        <input type="text" class="form-control" id="Company" name="Company" asp-for="Customer.Company" required />
+        <span asp-validation-for="Customer.Company" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Notes">Notes</label>
+        <textarea class="form-control" id="Notes" name="Notes" asp-for="Customer.Notes"></textarea>
+        <span asp-validation-for="Customer.Notes" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
